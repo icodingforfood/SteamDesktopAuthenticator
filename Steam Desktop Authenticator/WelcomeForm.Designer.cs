@@ -43,7 +43,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 73);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to\r\nSteam Desktop Authenticator";
+            this.label1.Text = "欢迎使用steam桌面认证器";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnImportConfig
@@ -65,7 +65,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(366, 37);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Select an item to get started:";
+            this.label2.Text = "选择一项开始:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAndroidImport
@@ -107,7 +107,7 @@
             this.MaximizeBox = false;
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Steam Desktop Authenticator";
+            this.Text = "Steam桌面认证器";
             this.ResumeLayout(false);
 
         }

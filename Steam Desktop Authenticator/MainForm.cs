@@ -53,11 +53,11 @@ namespace Steam_Desktop_Authenticator
                     Application.Exit();
                 }
 
-                btnManageEncryption.Text = "Manage Encryption";
+                btnManageEncryption.Text = "管理加密";
             }
             else
             {
-                btnManageEncryption.Text = "Setup Encryption";
+                btnManageEncryption.Text = "设置加密";
             }
 
             btnManageEncryption.Enabled = manifest.Entries.Count > 0;
@@ -101,7 +101,7 @@ namespace Steam_Desktop_Authenticator
             if (currentAccount == null) return;
 
             string oText = btnTradeConfirmations.Text;
-            btnTradeConfirmations.Text = "Loading...";
+            btnTradeConfirmations.Text = "加载中...";
             await RefreshAccountSession(currentAccount);
             btnTradeConfirmations.Text = oText;
 
@@ -124,7 +124,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (manifest.Encrypted)
             {
-                InputForm currentPassKeyForm = new InputForm("Enter current passkey", true);
+                InputForm currentPassKeyForm = new InputForm("输入当前密码", true);
                 currentPassKeyForm.ShowDialog();
 
                 if (currentPassKeyForm.Canceled)
@@ -134,7 +134,7 @@ namespace Steam_Desktop_Authenticator
 
                 string curPassKey = currentPassKeyForm.txtBox.Text;
 
-                InputForm changePassKeyForm = new InputForm("Enter new passkey, or leave blank to remove encryption.");
+                InputForm changePassKeyForm = new InputForm("输入新的密码，或留空以取消密码");
                 changePassKeyForm.ShowDialog();
 
                 if (changePassKeyForm.Canceled && !string.IsNullOrEmpty(changePassKeyForm.txtBox.Text))
@@ -142,7 +142,7 @@ namespace Steam_Desktop_Authenticator
                     return;
                 }
 
-                InputForm changePassKeyForm2 = new InputForm("Confirm new passkey, or leave blank to remove encryption.");
+                InputForm changePassKeyForm2 = new InputForm("确认新密码，或留空以取消密码");
                 changePassKeyForm2.ShowDialog();
 
                 if (changePassKeyForm2.Canceled && !string.IsNullOrEmpty(changePassKeyForm.txtBox.Text))
@@ -155,7 +155,7 @@ namespace Steam_Desktop_Authenticator
 
                 if (newPassKey != confirmPassKey)
                 {
-                    MessageBox.Show("Passkeys do not match.");
+                    MessageBox.Show("密码不匹配");
                     return;
                 }
 
@@ -164,7 +164,7 @@ namespace Steam_Desktop_Authenticator
                     newPassKey = null;
                 }
 
-                string action = newPassKey == null ? "remove" : "change";
+                string action = newPassKey == null ? "移除" : "修改";
                 if (!manifest.ChangeEncryptionKey(curPassKey, newPassKey))
                 {
                     MessageBox.Show("Unable to " + action + " passkey.");
@@ -417,7 +417,7 @@ namespace Steam_Desktop_Authenticator
 
             try
             {
-                lblStatus.Text = "Checking confirmations...";
+                lblStatus.Text = "检查确认...";
 
                 foreach (var acc in accs)
                 {
@@ -439,7 +439,7 @@ namespace Steam_Desktop_Authenticator
                     }
                     catch (SteamGuardAccount.WGTokenInvalidException)
                     {
-                        lblStatus.Text = "Refreshing session";
+                        lblStatus.Text = "刷新会话...";
                         await currentAccount.RefreshSessionAsync(); //Don't save it to the HDD, of course. We'd need their encryption passkey again.
                         lblStatus.Text = "";
                     }
@@ -525,7 +525,7 @@ namespace Steam_Desktop_Authenticator
             {
                 popupFrm.Account = currentAccount;
                 txtLoginToken.Text = currentAccount.GenerateSteamGuardCodeForTime(steamTime);
-                groupAccount.Text = "Account: " + currentAccount.AccountName;
+                groupAccount.Text = "账号: " + currentAccount.AccountName;
             }
         }
 
@@ -649,7 +649,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (newVersion > currentVersion)
             {
-                labelUpdate.Text = "Download new version"; // Show the user a new version is available if they press no
+                labelUpdate.Text = "下载新版本"; // Show the user a new version is available if they press no
                 DialogResult updateDialog = MessageBox.Show(String.Format("A new version is available! Would you like to download it now?\nYou will update from version {0} to {1}", Application.ProductVersion, newVersion.ToString()), "New Version", MessageBoxButtons.YesNo);
                 if (updateDialog == DialogResult.Yes)
                 {
@@ -671,18 +671,18 @@ namespace Steam_Desktop_Authenticator
 
         private void UpdateClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            try
-            {
-                dynamic resultObject = JsonConvert.DeserializeObject(e.Result);
-                newVersion = new Version(resultObject.tag_name.Value);
-                currentVersion = new Version(Application.ProductVersion);
-                updateUrl = resultObject.assets.First.browser_download_url.Value;
-                compareVersions();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Failed to check for updates.");
-            }
+            //try
+            //{
+            //    dynamic resultObject = JsonConvert.DeserializeObject(e.Result);
+            //    newVersion = new Version(resultObject.tag_name.Value);
+            //    currentVersion = new Version(Application.ProductVersion);
+            //    updateUrl = resultObject.assets.First.browser_download_url.Value;
+            //    compareVersions();
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Failed to check for updates.");
+            //}
         }
     }
 }

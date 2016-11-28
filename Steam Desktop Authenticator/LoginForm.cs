@@ -92,27 +92,27 @@ namespace Steam_Desktop_Authenticator
                         break;
 
                     case LoginResult.Need2FA:
-                        MessageBox.Show("This account already has a mobile authenticator linked to it.\nRemove the old authenticator from your Steam account before adding a new one.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("This account already has a mobile authenticator linked to it.\nRemove the old authenticator from your Steam account before adding a new one.", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Close();
                         return;
 
                     case LoginResult.BadRSA:
-                        MessageBox.Show("Error logging in: Steam returned \"BadRSA\".", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("登录失败: Steam 返回 \"BadRSA\".", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Close();
                         return;
 
                     case LoginResult.BadCredentials:
-                        MessageBox.Show("Error logging in: Username or password was incorrect.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("登录失败: 用户名或密码不正确.", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Close();
                         return;
 
                     case LoginResult.TooManyFailedLogins:
-                        MessageBox.Show("Error logging in: Too many failed logins, try again later.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("登录失败: 多次失败登录 稍后重试.", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Close();
                         return;
 
                     case LoginResult.GeneralFailure:
-                        MessageBox.Show("Error logging in: Steam returned \"GeneralFailure\".", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("登录失败: Steam 返回 \"GeneralFailure\".", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Close();
                         return;
                 }
@@ -133,7 +133,7 @@ namespace Steam_Desktop_Authenticator
                         string phoneNumber = "";
                         while (!PhoneNumberOkay(phoneNumber))
                         {
-                            InputForm phoneNumberForm = new InputForm("Enter your phone number in the following format: +{cC} phoneNumber. EG, +1 123-456-7890");
+                            InputForm phoneNumberForm = new InputForm("请输入你的电话号码，格式如: +{cC} 电话. cn, +86 12345678900");
                             phoneNumberForm.txtBox.Text = "+1 ";
                             phoneNumberForm.ShowDialog();
                             if (phoneNumberForm.Canceled)
@@ -152,7 +152,7 @@ namespace Steam_Desktop_Authenticator
                         break;
 
                     case AuthenticatorLinker.LinkResult.GeneralFailure:
-                        MessageBox.Show("Error adding your phone number. Steam returned \"GeneralFailure\".");
+                        MessageBox.Show("添加电话号码错误. Steam 返回 \"GeneralFailure\".");
                         this.Close();
                         return;
                 }
@@ -419,11 +419,11 @@ namespace Steam_Desktop_Authenticator
             man.SaveAccount(androidAccount, passKey != null, passKey);
             if (IsRefreshing)
             {
-                MessageBox.Show("Your login session was refreshed.");
+                MessageBox.Show("你的登录会话已经刷新.");
             }
             else
             {
-                MessageBox.Show("Mobile authenticator successfully linked. Please write down your revocation code: " + androidAccount.RevocationCode);
+                MessageBox.Show("手机认证器链接成功. 请写下撤回码: " + androidAccount.RevocationCode);
             }
             this.Close();
         }

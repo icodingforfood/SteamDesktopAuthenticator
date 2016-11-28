@@ -63,11 +63,11 @@ namespace Steam_Desktop_Authenticator
         {
             if (string.IsNullOrEmpty(password))
             {
-                throw new ArgumentException("Password is empty");
+                throw new ArgumentException("密码为空");
             }
             if (string.IsNullOrEmpty(salt))
             {
-                throw new ArgumentException("Salt is empty");
+                throw new ArgumentException("Salt值为空");
             }
             using (Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(password, Convert.FromBase64String(salt), PBKDF2_ITERATIONS))
             {
@@ -88,19 +88,19 @@ namespace Steam_Desktop_Authenticator
         {
             if (string.IsNullOrEmpty(password))
             {
-                throw new ArgumentException("Password is empty");
+                throw new ArgumentException("密码为空");
             }
             if (string.IsNullOrEmpty(passwordSalt))
             {
-                throw new ArgumentException("Salt is empty");
+                throw new ArgumentException("Salt值为空");
             }
             if (string.IsNullOrEmpty(IV))
             {
-                throw new ArgumentException("Initialization Vector is empty");
+                throw new ArgumentException("初始化Vector为空");
             }
             if (string.IsNullOrEmpty(encryptedData))
             {
-                throw new ArgumentException("Encrypted data is empty");
+                throw new ArgumentException("加密数据为空");
             }
 
             byte[] cipherText = Convert.FromBase64String(encryptedData);
@@ -153,19 +153,19 @@ namespace Steam_Desktop_Authenticator
         {
             if (string.IsNullOrEmpty(password))
             {
-                throw new ArgumentException("Password is empty");
+                throw new ArgumentException("密码为空");
             }
             if (string.IsNullOrEmpty(passwordSalt))
             {
-                throw new ArgumentException("Salt is empty");
+                throw new ArgumentException("Salt值为空");
             }
             if (string.IsNullOrEmpty(IV))
             {
-                throw new ArgumentException("Initialization Vector is empty");
+                throw new ArgumentException("初始化Vector为空");
             }
             if (string.IsNullOrEmpty(plaintext))
             {
-                throw new ArgumentException("Plaintext data is empty");
+                throw new ArgumentException("文本数据为空");
             }
             byte[] key = GetEncryptionKey(password, passwordSalt);
             byte[] ciphertext;

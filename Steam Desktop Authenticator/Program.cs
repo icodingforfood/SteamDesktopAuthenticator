@@ -43,7 +43,7 @@ namespace Steam_Desktop_Authenticator
             // run the program only once
             if (PriorProcess() != null)
             {
-                MessageBox.Show("Another instance of the app is already running.");
+                MessageBox.Show("您已经运行了！");
                 return;
             }
 

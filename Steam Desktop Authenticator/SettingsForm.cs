@@ -35,7 +35,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (!fullyLoaded) return;
 
-            var result = MessageBox.Show("Warning: enabling this will severely reduce the security of your items! Use of this option is at your own risk. Would you like to continue?", "Warning!", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("警告: 启用这个会严重减低你物品的安全性! 是否要继续?", "警告!", MessageBoxButtons.YesNo);
             if(result == DialogResult.No)
             {
                 affectedBox.Checked = false;

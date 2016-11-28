@@ -44,9 +44,9 @@
             this.chkPeriodicChecking.AutoSize = true;
             this.chkPeriodicChecking.Location = new System.Drawing.Point(12, 12);
             this.chkPeriodicChecking.Name = "chkPeriodicChecking";
-            this.chkPeriodicChecking.Size = new System.Drawing.Size(233, 30);
+            this.chkPeriodicChecking.Size = new System.Drawing.Size(169, 30);
             this.chkPeriodicChecking.TabIndex = 0;
-            this.chkPeriodicChecking.Text = "Periodically check for new confirmations\r\nand show a popup when they arrive";
+            this.chkPeriodicChecking.Text = "周期检查确认\r\n并且当有确认时弹窗显示";
             this.chkPeriodicChecking.UseVisualStyleBackColor = true;
             this.chkPeriodicChecking.CheckedChanged += new System.EventHandler(this.chkPeriodicChecking_CheckedChanged);
             // 
@@ -59,7 +59,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(224, 38);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -85,18 +85,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(59, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 26);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Seconds between checking \r\nfor confirmations";
+            this.label1.Text = "秒 间隔检查确认";
             // 
             // chkCheckAll
             // 
             this.chkCheckAll.AutoSize = true;
             this.chkCheckAll.Location = new System.Drawing.Point(12, 81);
             this.chkCheckAll.Name = "chkCheckAll";
-            this.chkCheckAll.Size = new System.Drawing.Size(213, 17);
+            this.chkCheckAll.Size = new System.Drawing.Size(130, 17);
             this.chkCheckAll.TabIndex = 4;
-            this.chkCheckAll.Text = "Check all accounts for confirmations";
+            this.chkCheckAll.Text = "检查所有账号确认";
             this.chkCheckAll.UseVisualStyleBackColor = true;
             // 
             // chkConfirmMarket
@@ -104,9 +104,9 @@
             this.chkConfirmMarket.AutoSize = true;
             this.chkConfirmMarket.Location = new System.Drawing.Point(12, 104);
             this.chkConfirmMarket.Name = "chkConfirmMarket";
-            this.chkConfirmMarket.Size = new System.Drawing.Size(198, 17);
+            this.chkConfirmMarket.Size = new System.Drawing.Size(156, 17);
             this.chkConfirmMarket.TabIndex = 5;
-            this.chkConfirmMarket.Text = "Auto-confirm market transactions";
+            this.chkConfirmMarket.Text = "自动确认社区市场交易";
             this.chkConfirmMarket.UseVisualStyleBackColor = true;
             this.chkConfirmMarket.CheckedChanged += new System.EventHandler(this.chkConfirmMarket_CheckedChanged);
             // 
@@ -115,9 +115,9 @@
             this.chkConfirmTrades.AutoSize = true;
             this.chkConfirmTrades.Location = new System.Drawing.Point(12, 127);
             this.chkConfirmTrades.Name = "chkConfirmTrades";
-            this.chkConfirmTrades.Size = new System.Drawing.Size(129, 17);
+            this.chkConfirmTrades.Size = new System.Drawing.Size(104, 17);
             this.chkConfirmTrades.TabIndex = 6;
-            this.chkConfirmTrades.Text = "Auto-confirm trades";
+            this.chkConfirmTrades.Text = "自动确认交易";
             this.chkConfirmTrades.UseVisualStyleBackColor = true;
             this.chkConfirmTrades.CheckedChanged += new System.EventHandler(this.chkConfirmTrades_CheckedChanged);
             // 
@@ -139,7 +139,7 @@
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Settings";
+            this.Text = "设置";
             ((System.ComponentModel.ISupportInitialize)(this.numPeriodicInterval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

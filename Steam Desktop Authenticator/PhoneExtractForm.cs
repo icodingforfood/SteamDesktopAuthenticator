@@ -64,7 +64,7 @@ namespace Steam_Desktop_Authenticator
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            InputForm input = new InputForm("Enter IP of the device");
+            InputForm input = new InputForm("输入设备IP");
             input.ShowDialog();
             if (!input.Canceled)
             {
@@ -86,7 +86,7 @@ namespace Steam_Desktop_Authenticator
 
         private void LoginAccount()
         {
-            MessageBox.Show("Account extracted succesfully! Please login to it.");
+            MessageBox.Show("账户提取成功，请登录.");
             LoginForm login = new LoginForm(LoginForm.LoginType.Android, steamAccount);
             login.ShowDialog();
             this.Close();
