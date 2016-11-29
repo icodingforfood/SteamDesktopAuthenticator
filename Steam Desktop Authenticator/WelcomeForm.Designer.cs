@@ -53,8 +53,7 @@
             this.btnImportConfig.Name = "btnImportConfig";
             this.btnImportConfig.Size = new System.Drawing.Size(366, 51);
             this.btnImportConfig.TabIndex = 1;
-            this.btnImportConfig.Text = "I already setup Steam Desktop Authenticator in another location on this PC and I " +
-    "want to import its account(s).\r\n";
+            this.btnImportConfig.Text = "我已经在其他电脑上设置了steam桌面认证器，我想导入该认证器中的账号";
             this.btnImportConfig.UseVisualStyleBackColor = true;
             this.btnImportConfig.Click += new System.EventHandler(this.btnImportConfig_Click);
             // 
@@ -75,8 +74,7 @@
             this.btnAndroidImport.Name = "btnAndroidImport";
             this.btnAndroidImport.Size = new System.Drawing.Size(366, 51);
             this.btnAndroidImport.TabIndex = 3;
-            this.btnAndroidImport.Text = "I have an Android device and want to \r\nimport my Steam account(s) from the Steam " +
-    "app.";
+            this.btnAndroidImport.Text = "我有一安卓设备，想从steam应用中导入我的steam账号";
             this.btnAndroidImport.UseVisualStyleBackColor = true;
             this.btnAndroidImport.Click += new System.EventHandler(this.btnAndroidImport_Click);
             // 
@@ -87,7 +85,7 @@
             this.btnJustStart.Name = "btnJustStart";
             this.btnJustStart.Size = new System.Drawing.Size(366, 51);
             this.btnJustStart.TabIndex = 4;
-            this.btnJustStart.Text = "This is my first time and \r\nI just want to sign into my Steam Account(s).";
+            this.btnJustStart.Text = "这是我第一次使用，只想登录我的steam账号";
             this.btnJustStart.UseVisualStyleBackColor = true;
             this.btnJustStart.Click += new System.EventHandler(this.btnJustStart_Click);
             // 

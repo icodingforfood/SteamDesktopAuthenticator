@@ -112,7 +112,7 @@ namespace Steam_Desktop_Authenticator
             }
             catch (Exception)
             {
-                DialogResult res = MessageBox.Show("You are missing a dependency required to view your trade confirmations.\nWould you like to install it now?", "Trade confirmations failed to open", MessageBoxButtons.YesNo);
+                DialogResult res = MessageBox.Show("查看交易确认 你缺少一个依赖.\n需要现在安装吗?", "交易确认打开失败", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
                     new InstallRedistribForm(true).ShowDialog();
@@ -167,11 +167,11 @@ namespace Steam_Desktop_Authenticator
                 string action = newPassKey == null ? "移除" : "修改";
                 if (!manifest.ChangeEncryptionKey(curPassKey, newPassKey))
                 {
-                    MessageBox.Show("Unable to " + action + " passkey.");
+                    MessageBox.Show("不能" + action + "密码.");
                 }
                 else
                 {
-                    MessageBox.Show("Passkey successfully " + action + "d.");
+                    MessageBox.Show("密码成功" + action + ".");
                     this.loadAccountsList();
                 }
             }
@@ -182,17 +182,17 @@ namespace Steam_Desktop_Authenticator
             }
         }
 
-        private void labelUpdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (newVersion == null || currentVersion == null)
-            {
-                checkForUpdates();
-            }
-            else
-            {
-                compareVersions();
-            }
-        }
+        //private void labelUpdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    if (newVersion == null || currentVersion == null)
+        //    {
+        //        checkForUpdates();
+        //    }
+        //    else
+        //    {
+        //        compareVersions();
+        //    }
+        //}
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
@@ -211,7 +211,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (manifest.Encrypted)
             {
-                MessageBox.Show("You cannot remove accounts from the manifest file while it is encrypted.", "Remove from manifest", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("由于加密你不能从清单中移除账号.", "从清单中移除", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -387,7 +387,7 @@ namespace Steam_Desktop_Authenticator
 
         private async void timerSteamGuard_Tick(object sender, EventArgs e)
         {
-            lblStatus.Text = "Aligning time with Steam...";
+            lblStatus.Text = "同步steam时间...";
             steamTime = await TimeAligner.GetSteamTimeAsync();
             lblStatus.Text = "";
 
@@ -645,29 +645,29 @@ namespace Steam_Desktop_Authenticator
             updateClient.DownloadStringAsync(new Uri("https://api.github.com/repos/Jessecar96/SteamDesktopAuthenticator/releases/latest"));
         }
 
-        private void compareVersions()
-        {
-            if (newVersion > currentVersion)
-            {
-                labelUpdate.Text = "下载新版本"; // Show the user a new version is available if they press no
-                DialogResult updateDialog = MessageBox.Show(String.Format("A new version is available! Would you like to download it now?\nYou will update from version {0} to {1}", Application.ProductVersion, newVersion.ToString()), "New Version", MessageBoxButtons.YesNo);
-                if (updateDialog == DialogResult.Yes)
-                {
-                    Process.Start(updateUrl);
-                }
-            }
-            else
-            {
-                if (!startupUpdateCheck)
-                {
-                    MessageBox.Show(String.Format("You are using the latest version: {0}", Application.ProductVersion));
-                }
-            }
+        //private void compareVersions()
+        //{
+        //    if (newVersion > currentVersion)
+        //    {
+        //        labelUpdate.Text = "下载新版本"; // Show the user a new version is available if they press no
+        //        DialogResult updateDialog = MessageBox.Show(String.Format("A new version is available! Would you like to download it now?\nYou will update from version {0} to {1}", Application.ProductVersion, newVersion.ToString()), "New Version", MessageBoxButtons.YesNo);
+        //        if (updateDialog == DialogResult.Yes)
+        //        {
+        //            Process.Start(updateUrl);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (!startupUpdateCheck)
+        //        {
+        //            MessageBox.Show(String.Format("You are using the latest version: {0}", Application.ProductVersion));
+        //        }
+        //    }
 
-            newVersion = null; // Check the api again next time they check for updates
-            updateClient = null; // Set to null to indicate it's done checking
-            startupUpdateCheck = false; // Set when it's done checking on startup
-        }
+        //    newVersion = null; // Check the api again next time they check for updates
+        //    updateClient = null; // Set to null to indicate it's done checking
+        //    startupUpdateCheck = false; // Set when it's done checking on startup
+        //}
 
         private void UpdateClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {

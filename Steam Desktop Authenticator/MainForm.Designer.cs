@@ -42,7 +42,6 @@
             this.btnManageEncryption = new System.Windows.Forms.Button();
             this.groupAccount = new System.Windows.Forms.GroupBox();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.labelUpdate = new System.Windows.Forms.LinkLabel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,22 +202,6 @@
             this.labelVersion.Text = "v0.0.1";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // labelUpdate
-            // 
-            this.labelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.labelUpdate.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelUpdate.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.labelUpdate.Location = new System.Drawing.Point(5, 413);
-            this.labelUpdate.Name = "labelUpdate";
-            this.labelUpdate.Size = new System.Drawing.Size(122, 14);
-            this.labelUpdate.TabIndex = 9;
-            this.labelUpdate.TabStop = true;
-            this.labelUpdate.Text = "检查更新";
-            this.labelUpdate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelUpdate_LinkClicked);
-            // 
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
@@ -248,39 +231,39 @@
             this.menuImportMaFile,
             this.menuImportAndroid});
             this.importAccountToolStripMenuItem.Name = "importAccountToolStripMenuItem";
-            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.importAccountToolStripMenuItem.Text = "导入账号";
             // 
             // menuImportMaFile
             // 
             this.menuImportMaFile.Name = "menuImportMaFile";
-            this.menuImportMaFile.Size = new System.Drawing.Size(152, 22);
+            this.menuImportMaFile.Size = new System.Drawing.Size(149, 22);
             this.menuImportMaFile.Text = "从maFile文件";
             this.menuImportMaFile.Click += new System.EventHandler(this.menuImportMaFile_Click);
             // 
             // menuImportAndroid
             // 
             this.menuImportAndroid.Name = "menuImportAndroid";
-            this.menuImportAndroid.Size = new System.Drawing.Size(152, 22);
+            this.menuImportAndroid.Size = new System.Drawing.Size(149, 22);
             this.menuImportAndroid.Text = "从安卓设备";
             this.menuImportAndroid.Click += new System.EventHandler(this.menuImportAndroid_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // menuSettings
             // 
             this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Size = new System.Drawing.Size(152, 22);
+            this.menuSettings.Size = new System.Drawing.Size(124, 22);
             this.menuSettings.Text = "设置";
             this.menuSettings.Click += new System.EventHandler(this.menuSettings_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(152, 22);
+            this.menuQuit.Size = new System.Drawing.Size(124, 22);
             this.menuQuit.Text = "退出";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
@@ -299,33 +282,33 @@
             // menuLoginAgain
             // 
             this.menuLoginAgain.Name = "menuLoginAgain";
-            this.menuLoginAgain.Size = new System.Drawing.Size(152, 22);
+            this.menuLoginAgain.Size = new System.Drawing.Size(148, 22);
             this.menuLoginAgain.Text = "重新登陆";
             this.menuLoginAgain.Click += new System.EventHandler(this.menuLoginAgain_Click);
             // 
             // menuRefreshSession
             // 
             this.menuRefreshSession.Name = "menuRefreshSession";
-            this.menuRefreshSession.Size = new System.Drawing.Size(152, 22);
+            this.menuRefreshSession.Size = new System.Drawing.Size(148, 22);
             this.menuRefreshSession.Text = "强制会话刷新";
             this.menuRefreshSession.Click += new System.EventHandler(this.menuRefreshSession_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(145, 6);
             // 
             // menuRemoveAccountFromManifest
             // 
             this.menuRemoveAccountFromManifest.Name = "menuRemoveAccountFromManifest";
-            this.menuRemoveAccountFromManifest.Size = new System.Drawing.Size(152, 22);
+            this.menuRemoveAccountFromManifest.Size = new System.Drawing.Size(148, 22);
             this.menuRemoveAccountFromManifest.Text = "从配置中移除";
             this.menuRemoveAccountFromManifest.Click += new System.EventHandler(this.menuRemoveAccountFromManifest_Click);
             // 
             // menuDeactivateAuthenticator
             // 
             this.menuDeactivateAuthenticator.Name = "menuDeactivateAuthenticator";
-            this.menuDeactivateAuthenticator.Size = new System.Drawing.Size(152, 22);
+            this.menuDeactivateAuthenticator.Size = new System.Drawing.Size(148, 22);
             this.menuDeactivateAuthenticator.Text = "解除认证器";
             this.menuDeactivateAuthenticator.Click += new System.EventHandler(this.menuDeactivateAuthenticator_Click);
             // 
@@ -443,7 +426,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAccSearch);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.labelUpdate);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.groupAccount);
             this.Controls.Add(this.btnManageEncryption);
@@ -484,7 +466,6 @@
         private System.Windows.Forms.Button btnManageEncryption;
         private System.Windows.Forms.GroupBox groupAccount;
         private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.LinkLabel labelUpdate;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

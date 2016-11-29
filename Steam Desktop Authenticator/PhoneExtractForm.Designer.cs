@@ -90,7 +90,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(445, 115);
             this.label2.TabIndex = 4;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Text = "1）通过USB线连接你的设备\r\n2）到手机设置中\r\n3）点击“版本号”10次以启用开发者选项\r\n4）返回，打开“开发者选项”\r\n5）启用“USB调试模式”\r\n6）" +
+    "弹出“允许”请点击\r\n7）如果弹出“root允许”请点击";
             // 
             // label3
             // 
